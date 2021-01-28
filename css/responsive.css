@@ -82,6 +82,10 @@
       font-size: .9rem;
   }
 
+  button#remove-index-btn, button#remove-data-btn {
+    margin-top: 5px;
+  }
+
   button#remove-settings {
       font-size: .8rem;
   }

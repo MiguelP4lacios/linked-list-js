@@ -162,11 +162,13 @@ div.solid-border {
 /* ----------------------------------------------------------------- */
 
 section.list {
+  position: relative;
+  top: 40px;
   width: 95%;
   padding-left: 5%;
   padding-top: 40px;
   padding-bottom: 35px;
-  margin-bottom: 0;
+  margin: 55px 0px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -381,11 +383,17 @@ div.wrapper p {
 
 div.wrapper input {
   padding: 5px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   display: block;
   margin: 0 auto;
   box-sizing: border-box;
   margin-top: 10px;
+  border-radius: 8px;
+  outline: none;
+}
+
+div.wrapper input:focus{
+  border: 1px solid #111;
 }
 
 div.wrapper input::placeholder {
@@ -398,7 +406,7 @@ div.wrapper input::placeholder {
 
 button.button {
   border: none;
-  background: linear-gradient(-125deg,  #0067ff, #8900e8);
+  background: rgb(56, 0, 166);
   padding: 10px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -407,7 +415,9 @@ button.button {
   display: block;
   margin: 0 auto;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  outline: none;
+  border-radius: 8px;
+  transition: all .2s ease;
 }
 
 button.button:hover {
@@ -441,12 +451,14 @@ div.wrapper > div:nth-child(4) input {
 
 button#remove-btn {
   width: 70%;
-  background: linear-gradient(to right, #ff002b, #9f0000);
+  background: #9f0000;
+  border-radius: 8px 0px 0px 8px;
 }
 
 button#remove-settings {
   width: 30%;
   font-size: 1.3rem;
+  border-radius: 0px 8px 8px 0px;
   background: #9f0000;
 }
 
@@ -482,17 +494,29 @@ button.remove-option:hover {
   font-weight: bold;
 }
 
+button#remove-index-btn, button#remove-data-btn {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+button#remove-index-btn:hover, button#remove-data-btn:hover {
+  color: #9f0000;
+  border-color: #9f0000;
+}
+
 button#remove-index-btn {
-  z-index: 2;
+  z-index: 1;
 }
 
 button#remove-data-btn {
-  z-index: 1;
+  z-index: 2;
 }
 
 @keyframes toggleMenuDown {
   0% {
-      transform: translate(0, -100%);
+      transform: translate(0, -200%);
   }
   100% {
       transform: translate(0, 0);
@@ -501,7 +525,7 @@ button#remove-data-btn {
 
 @keyframes toggleMenuDown200 {
   0% {
-      transform: translate(0, -200%);
+      transform: translate(0, -300%);
   }
   100% {
       transform: translate(0, 0);
@@ -510,13 +534,13 @@ button#remove-data-btn {
 
 @keyframes toggleMenuUp {
   100% {
-      transform: translate(0, -100%);
+      transform: translate(0, -200%);
   }
 }
 
 @keyframes toggleMenuUp200 {
   100% {
-      transform: translate(0, -200%);
+      transform: translate(0, -300%);
   }
 }
 
