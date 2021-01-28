@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
   window.addEventListener('resize', () => {
@@ -11,18 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
   add(0, 1);
 
   function getUserInput(parentNode) {
-      let inputs = parentNode.getElementsByTagName('input');
-      let userInput = {};
-      if (inputs.length === 1) {
-          if (inputs[0].placeholder === "Data")
-              userInput.data = inputs[0].valueAsNumber;
-          else
-              userInput.index = inputs[0].valueAsNumber;
-          return userInput;
-      }
-      userInput.index = inputs[0].valueAsNumber;
-      userInput.data = inputs[1].valueAsNumber;
-      return userInput;
+    let inputs = parentNode.getElementsByTagName('input');
+    let userInput = {};
+    if (inputs.length === 1) {
+        if (inputs[0].placeholder === "Data")
+            userInput.data = inputs[0].valueAsNumber;
+        else
+            userInput.index = inputs[0].valueAsNumber;
+        return userInput;
+    }
+    userInput.index = inputs[0].valueAsNumber;
+    userInput.data = inputs[1].valueAsNumber;
+    return userInput;
   }
 
   // Add Button
